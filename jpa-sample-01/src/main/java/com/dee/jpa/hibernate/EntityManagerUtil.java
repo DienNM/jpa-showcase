@@ -14,7 +14,7 @@ public final class EntityManagerUtil {
     private static EntityManagerUtil instance;
     
     private EntityManagerUtil() {
-        entityManagerFactory = Persistence.createEntityManagerFactory("pu-dee");
+        entityManagerFactory = Persistence.createEntityManagerFactory("pu-dee-jpa");
     }
     
     public synchronized static EntityManagerUtil getInstance() {
