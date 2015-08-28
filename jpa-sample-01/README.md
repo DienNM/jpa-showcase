@@ -11,3 +11,4 @@ Some configurations:
     - Using local transaction that lets provider handle
     - Using Hibernate as provider (see provider tag)
     - Named persistence-unit 
+    - Connection Pool: c3p0
