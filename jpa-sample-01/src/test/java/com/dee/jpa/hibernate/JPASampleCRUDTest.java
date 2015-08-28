@@ -12,7 +12,7 @@ import junit.framework.TestCase;
  * @author dien.nguyen
  **/
 
-public class JPASampleTest1 extends TestCase{
+public class JPASampleCRUDTest extends TestCase{
     
     private UserModel createUser() {
         UserModel userModel = new UserModel();
@@ -22,7 +22,7 @@ public class JPASampleTest1 extends TestCase{
         return userModel;
     }
 
-    public void testJPAStartUp() {
+    public void testJPA_CRUD() {
         UserModel userModel = createUser();
         Assert.assertNull(userModel.getId());
         EntityManager em = EntityManagerUtil.getEntityManager();
@@ -54,6 +54,20 @@ public class JPASampleTest1 extends TestCase{
         em = EntityManagerUtil.getEntityManager();
         pUserModel3 = em.find(UserModel.class, userModel.getId());
         Assert.assertEquals("Nguyen Minh", pUserModel3.getLastName());
+        em.close();
+        
+        
+        // Update a detached object
+        pUserModel3.setLastName("NM");
+        em = EntityManagerUtil.getEntityManager();
+        em.getTransaction().begin();
+        em.merge(pUserModel3);
+        em.getTransaction().commit();
+        em.close();
+        
+        em = EntityManagerUtil.getEntityManager();
+        pUserModel3 = em.find(UserModel.class, userModel.getId());
+        Assert.assertEquals("NM", pUserModel3.getLastName());
         em.close();
         
         // Remove User, note that we cannot remove a detached object

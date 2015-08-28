@@ -6,6 +6,7 @@
     <persistence-unit name="pu-dee-jpa" transaction-type="RESOURCE_LOCAL">
 
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        
         <class>com.dee.jpa.hibernate.model.UserModel</class>
 
         <properties>
