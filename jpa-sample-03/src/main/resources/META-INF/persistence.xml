@@ -8,16 +8,6 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         
         <class>com.dee.jpa.hibernate.model.TypeMapping1Model</class>
-        <class>com.dee.jpa.hibernate.model.TypeMapping2Model</class>
-        <class>com.dee.jpa.hibernate.model.TypeMapping3Model</class>
-        <class>com.dee.jpa.hibernate.model.TypeMapping4Model</class>
-        <class>com.dee.jpa.hibernate.model.FetchingMappingModel</class>
-        <class>com.dee.jpa.hibernate.model.LargeObjectMappingModel</class>
-        <class>com.dee.jpa.hibernate.model.EnumerationMappingModel</class>
-        
-        
-        <class>com.dee.jpa.hibernate.model.identifier.Identifier1Model</class>
-        <class>com.dee.jpa.hibernate.model.identifier.Identifier2Model</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
