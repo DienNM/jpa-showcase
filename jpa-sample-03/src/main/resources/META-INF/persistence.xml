@@ -18,6 +18,10 @@
         <class>com.dee.jpa.hibernate.model.one2many.ClassModel</class>
         <class>com.dee.jpa.hibernate.model.one2many.ProfessorModel</class>
         <class>com.dee.jpa.hibernate.model.one2many.DepartmentModel</class>
+        
+        
+        <class>com.dee.jpa.hibernate.model.many2many.DeveloperModel</class>
+        <class>com.dee.jpa.hibernate.model.many2many.ProjectModel</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
