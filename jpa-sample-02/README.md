@@ -18,3 +18,11 @@ Fetching Mapping:
         + Depending on implementation of JPA, (Hibernate is in this case) 
           * Hibernate: implement FieldHandled interface 
         + Lazy field is only loaded as need in persistent status 
+        
+Large Object Mapping:
+    - @Lob
+    - LOBs come in two kinds in the database:
+        + Binary Large Ojbects, calls BLOBs
+            * Java Type Mapping: byte[], Byte[], Serializable
+        + Character Large Objects, calls CLOBs
+            * Java Type Mapping: char[], Character[], String objects
