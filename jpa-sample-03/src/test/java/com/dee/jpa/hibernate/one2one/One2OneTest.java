@@ -1,4 +1,4 @@
-package com.dee.jpa.hibernate.one2many;
+package com.dee.jpa.hibernate.one2one;
 
 import javax.persistence.EntityManager;
 

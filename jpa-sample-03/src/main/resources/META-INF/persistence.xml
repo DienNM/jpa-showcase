@@ -13,6 +13,11 @@
         <class>com.dee.jpa.hibernate.model.one2one.EmployeeModel</class>
         <class>com.dee.jpa.hibernate.model.one2one.AddressModel</class>
         <class>com.dee.jpa.hibernate.model.one2one.EmployeeInfoModel</class>
+        
+        <class>com.dee.jpa.hibernate.model.one2many.StudentModel</class>
+        <class>com.dee.jpa.hibernate.model.one2many.ClassModel</class>
+        <class>com.dee.jpa.hibernate.model.one2many.ProfessorModel</class>
+        <class>com.dee.jpa.hibernate.model.one2many.DepartmentModel</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
