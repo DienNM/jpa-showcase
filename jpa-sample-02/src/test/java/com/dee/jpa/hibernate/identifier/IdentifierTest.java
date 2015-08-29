@@ -4,6 +4,8 @@ import javax.persistence.EntityManager;
 
 import junit.framework.TestCase;
 
+import org.junit.Assert;
+
 import com.dee.jpa.hibernate.EntityManagerUtil;
 import com.dee.jpa.hibernate.model.identifer.Identifier21Model;
 import com.dee.jpa.hibernate.model.identifer.Identifier2Model;
@@ -29,6 +31,10 @@ public class IdentifierTest extends TestCase{
         em.persist(identifier1);
         em.persist(identifier11);
         em.persist(identifier12);
+
+        Assert.assertNotNull(identifier1.getId());
+        Assert.assertNotNull(identifier11.getId());
+        Assert.assertNotNull(identifier12.getId());
         
         em.persist(identifier21);
         em.persist(identifier22);
