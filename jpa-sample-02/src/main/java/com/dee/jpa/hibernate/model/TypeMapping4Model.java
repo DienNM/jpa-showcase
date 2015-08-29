@@ -8,6 +8,7 @@ import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -36,6 +37,9 @@ public class TypeMapping4Model implements Serializable {
     
     // DATETIME
     private Date utilDateValue;
+
+    @Column(columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    private Date timeStampDateValue;
     
     // DATETIME
     private Calendar calendarValue;
@@ -112,6 +116,14 @@ public class TypeMapping4Model implements Serializable {
 
     public void setSqlTimestamp(Timestamp sqlTimestamp) {
         this.sqlTimestamp = sqlTimestamp;
+    }
+
+    public Date getTimeStampDateValue() {
+        return timeStampDateValue;
+    }
+
+    public void setTimeStampDateValue(Date timeStampDateValue) {
+        this.timeStampDateValue = timeStampDateValue;
     }
     
 }
