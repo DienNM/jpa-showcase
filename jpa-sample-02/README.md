@@ -20,9 +20,17 @@ Fetching Mapping:
         + Lazy field is only loaded as need in persistent status 
         
 Large Object Mapping:
+
+    - LargeObjectMappingTest 
     - @Lob
     - LOBs come in two kinds in the database:
         + Binary Large Ojbects, calls BLOBs
             * Java Type Mapping: byte[], Byte[], Serializable
         + Character Large Objects, calls CLOBs
             * Java Type Mapping: char[], Character[], String objects
+            
+Enumeration Mapping:
+
+    - EnumerationMappingModel
+    - Using @Enumerated(EnumType.STRING) - to store NAME
+    - Using @Enumerated(EnumType.ORDINAL) to store ordinal. This type is by default
