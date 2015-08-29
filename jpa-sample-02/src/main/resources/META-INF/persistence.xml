@@ -13,6 +13,7 @@
         <class>com.dee.jpa.hibernate.model.TypeMapping4Model</class>
         <class>com.dee.jpa.hibernate.model.FetchingMappingModel</class>
         <class>com.dee.jpa.hibernate.model.LargeObjectMappingModel</class>
+        <class>com.dee.jpa.hibernate.model.EnumerationMappingModel</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />

@@ -44,7 +44,6 @@ public class JPASampleMapping3Test extends TestCase{
         Assert.assertNull(typeMappingModel.getId());
         EntityManager em = EntityManagerUtil.getEntityManager();
         
-        // Persist User
         em.getTransaction().begin();
         em.persist(typeMappingModel);
         em.getTransaction().commit();
