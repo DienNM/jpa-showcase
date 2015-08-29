@@ -9,7 +9,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import javax.persistence.Table;
 
 import org.hibernate.bytecode.internal.javassist.FieldHandled;
@@ -20,7 +19,7 @@ import org.hibernate.bytecode.internal.javassist.FieldHandler;
  **/
 
 @Entity
-@Table(name = "type_mapping_model_4")
+@Table(name = "fetching_mapping")
 public class FetchingMappingModel implements Serializable, FieldHandled {
 
     private static final long serialVersionUID = 1L;
@@ -31,7 +30,6 @@ public class FetchingMappingModel implements Serializable, FieldHandled {
     
     private FieldHandler  fieldHandler;
 
-    @Lob
     @Basic(fetch = FetchType.LAZY)
     @Column(name = "_lazy")
     private byte[] lazyFetchingValue;
