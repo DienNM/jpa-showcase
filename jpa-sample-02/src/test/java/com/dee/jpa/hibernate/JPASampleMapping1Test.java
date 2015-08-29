@@ -27,7 +27,7 @@ public class JPASampleMapping1Test extends TestCase{
         return typeMappingModel;
     }
 
-    public void testJPA_CRUD() {
+    public void testJPA_MappingType() {
         TypeMapping1Model typeMappingModel = createTypeMappingModel();
         Assert.assertNull(typeMappingModel.getId());
         EntityManager em = EntityManagerUtil.getEntityManager();

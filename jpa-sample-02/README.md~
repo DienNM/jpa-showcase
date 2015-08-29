@@ -1,14 +1,15 @@
-# JPA Hibernate Sample 01
+# JPA Hibernate Sample 02
 
 This is showing Mapping Samples in JPA
 
     - Demo Simple Mapping Type
-    - Demo Query/TypeQuery<E> in JPA with Unit Test
+   
+Type Mapping:
+    - JPASampleMapping1Test: Mapping simple type of: byte, int, short, long, boolean, char, float, double
+    - JPASampleMapping2Test: Mapping simple type of : Byte, Integer, Short, Long, Boolean, Character, Float, Double
+    - JPASampleMapping3Test: Mapping simple type of : byte[], Byte[], char[], Character[]
+    - JPASampleMapping4Test: Mapping simple type of : BigInteger, BigDecimal, Date, Calendar, java.sql.Date, Time, Timestamp
 
-Some configurations:
-    
-    - persistence.xml: must be placed in classpath:META-INF
-    - Using local transaction that lets provider handle
-    - Using Hibernate as provider (see provider tag)
-    - Named persistence-unit 
-    - Connection Pool: c3p0
+Fetching Mapping:
+    - FetchingMappingTest:
+	+ 

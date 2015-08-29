@@ -11,6 +11,7 @@
         <class>com.dee.jpa.hibernate.model.TypeMapping2Model</class>
         <class>com.dee.jpa.hibernate.model.TypeMapping3Model</class>
         <class>com.dee.jpa.hibernate.model.TypeMapping4Model</class>
+        <class>com.dee.jpa.hibernate.model.FetchingMappingModel</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
