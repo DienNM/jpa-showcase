@@ -28,6 +28,7 @@ public class JPASampleMapping4Test extends TestCase{
         typeMappingModel.setBigDecimalValue(new BigDecimal("99999999999.2222222222"));
         
         typeMappingModel.setCalendarValue(Calendar.getInstance());
+        typeMappingModel.setCalendarDateValue(Calendar.getInstance());
         typeMappingModel.setTimeStampDateValue(Calendar.getInstance().getTime());
         typeMappingModel.setUtilDateValue(Calendar.getInstance().getTime());
         

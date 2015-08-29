@@ -14,6 +14,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * @author dien.nguyen
@@ -36,13 +38,23 @@ public class TypeMapping4Model implements Serializable {
     private BigDecimal bigDecimalValue;
     
     // DATETIME
+    @Temporal(TemporalType.TIME)
+    // 15:06:19
     private Date utilDateValue;
 
     @Column(columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Temporal(TemporalType.DATE)
+    // 2015-08-29 00:00:00
     private Date timeStampDateValue;
     
     // DATETIME
+    @Temporal(TemporalType.TIMESTAMP)
+    // 2015-08-29 15:08:06
     private Calendar calendarValue;
+    
+    @Temporal(TemporalType.DATE)
+    // 2015-08-29
+    private Calendar calendarDateValue;
     
     // DATE
     private java.sql.Date sqlDate;
@@ -124,6 +136,14 @@ public class TypeMapping4Model implements Serializable {
 
     public void setTimeStampDateValue(Date timeStampDateValue) {
         this.timeStampDateValue = timeStampDateValue;
+    }
+
+    public Calendar getCalendarDateValue() {
+        return calendarDateValue;
+    }
+
+    public void setCalendarDateValue(Calendar calendarDateValue) {
+        this.calendarDateValue = calendarDateValue;
     }
     
 }
