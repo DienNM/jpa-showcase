@@ -7,7 +7,12 @@
 
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         
-        <class>com.dee.jpa.hibernate.model.TypeMapping1Model</class>
+        <class>com.dee.jpa.hibernate.model.many2one.GroupModel</class>
+        <class>com.dee.jpa.hibernate.model.many2one.UserModel</class>
+        
+        <class>com.dee.jpa.hibernate.model.one2one.EmployeeModel</class>
+        <class>com.dee.jpa.hibernate.model.one2one.AddressModel</class>
+        <class>com.dee.jpa.hibernate.model.one2one.EmployeeInfoModel</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
@@ -19,8 +24,6 @@
             <property name="hibernate.hbm2ddl.auto" value="create" />
             <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.generate_statistics" value="true" />
-            
-            <property name="hibernate.id.new_generator_mappings" value="true"/>
             
             
             <!-- Connection Pool C3P0 -->
