@@ -10,6 +10,7 @@
         <class>com.dee.jpa.hibernate.model.TypeMapping1Model</class>
         <class>com.dee.jpa.hibernate.model.TypeMapping2Model</class>
         <class>com.dee.jpa.hibernate.model.TypeMapping3Model</class>
+        <class>com.dee.jpa.hibernate.model.TypeMapping4Model</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
