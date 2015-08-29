@@ -35,3 +35,7 @@ Enumeration Mapping:
     - EnumerationMappingModel
     - Using @Enumerated(EnumType.STRING) - to store NAME
     - Using @Enumerated(EnumType.ORDINAL) to store ordinal. This type is by default
+    
+Identifier
+
+    - IdentifierTest
