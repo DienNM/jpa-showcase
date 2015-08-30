@@ -22,6 +22,9 @@
         
         <class>com.dee.jpa.hibernate.model.many2many.DeveloperModel</class>
         <class>com.dee.jpa.hibernate.model.many2many.ProjectModel</class>
+        
+        <class>com.dee.jpa.hibernate.model.collection.OwnerModel</class>
+        <class>com.dee.jpa.hibernate.model.collection.VacationModel</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
