@@ -18,7 +18,7 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name = "o2o_class")
+@Table(name = "o2m_class")
 public class ClassModel implements Serializable {
 
     private static final long serialVersionUID = 1L;
