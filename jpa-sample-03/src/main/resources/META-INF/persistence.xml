@@ -35,6 +35,8 @@
         
         <class>com.dee.jpa.hibernate.model.collection.OwnerModel</class>
         <class>com.dee.jpa.hibernate.model.collection.VacationModel</class>
+        
+        <class>com.dee.jpa.hibernate.model.collection.MapCollectionModel</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
