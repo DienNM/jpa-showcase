@@ -7,12 +7,15 @@ import junit.framework.TestCase;
 import org.junit.Assert;
 
 import com.dee.jpa.hibernate.EntityManagerUtil;
+import com.dee.jpa.hibernate.model.many2many.DevModel;
+import com.dee.jpa.hibernate.model.many2many.DevTeamRole;
 import com.dee.jpa.hibernate.model.many2many.DeveloperModel;
 import com.dee.jpa.hibernate.model.many2many.OrderEntryIdModel;
 import com.dee.jpa.hibernate.model.many2many.OrderEntryModel;
 import com.dee.jpa.hibernate.model.many2many.OrderModel;
 import com.dee.jpa.hibernate.model.many2many.ProductModel;
 import com.dee.jpa.hibernate.model.many2many.ProjectModel;
+import com.dee.jpa.hibernate.model.many2many.TeamModel;
 
 /**
  * @author dien.nguyen
@@ -147,6 +150,59 @@ public class Many2ManyTest extends TestCase{
         assertEquals(2, pOrderEntry1.getAmount());
         em.close();
         
+    }
+    
+    public void testMany2ManyWithExtraColums2() {
+        
+        TeamModel team1 = new TeamModel();
+        team1.setName("Team 1");
+        
+        TeamModel team2 = new TeamModel();
+        team2.setName("Team 2");
+        
+        DevModel dev1 = new DevModel();
+        dev1.setName("Dev 1");
+        
+        DevModel dev2 = new DevModel();
+        dev2.setName("Dev 2");
+        
+        DevTeamRole devRole1 = new DevTeamRole();
+        devRole1.setRole("DEV");
+        DevTeamRole devRole2 = new DevTeamRole();
+        devRole2.setRole("LEAD");
+        DevTeamRole devRole3 = new DevTeamRole();
+        devRole3.setRole("MANAGER");
+        DevTeamRole devRole4 = new DevTeamRole();
+        devRole4.setRole("DEV");
+        
+        // ROLE 2 Team
+        team1.getDevRoles().put(devRole1, dev1);
+        team1.getDevRoles().put(devRole2, dev2);
+        
+        team2.getDevRoles().put(devRole3, dev1);
+        team2.getDevRoles().put(devRole4, dev2);
+        
+        EntityManager em = EntityManagerUtil.getEntityManager();
+        em.getTransaction().begin();
+
+        em.persist(dev1);
+        em.persist(dev2);
+        
+        em.persist(team1);
+        em.persist(team2);
+        
+        em.getTransaction().commit();
+        em.close();
+        
+        // LOAD DATA
+        em = EntityManagerUtil.getEntityManager();
+        
+        TeamModel pTeam1 = em.find(TeamModel.class, team1.getId());
+        Assert.assertNotNull(pTeam1);
+        Assert.assertNotNull(pTeam1.getDevRoles());
+        Assert.assertEquals(2, pTeam1.getDevRoles().size());
+
+        em.close();
     }
     
 }

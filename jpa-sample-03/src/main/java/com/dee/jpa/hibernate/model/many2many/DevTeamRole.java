@@ -2,10 +2,13 @@ package com.dee.jpa.hibernate.model.many2many;
 
 import java.io.Serializable;
 
+import javax.persistence.Embeddable;
+
 /**
  * @author dien.nguyen
  */
 
+@Embeddable
 public class DevTeamRole implements Serializable{
 
     private static final long serialVersionUID = 1L;
