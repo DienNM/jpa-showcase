@@ -8,6 +8,7 @@ import org.junit.Assert;
 
 import com.dee.jpa.hibernate.EntityManagerUtil;
 import com.dee.jpa.hibernate.model.collection.OwnerModel;
+import com.dee.jpa.hibernate.model.collection.SocialNetwork;
 import com.dee.jpa.hibernate.model.collection.VacationModel;
 
 import junit.framework.TestCase;
@@ -35,6 +36,13 @@ public class CollectionMappingTest extends TestCase{
         OwnerModel owner = new OwnerModel();
         owner.getEmails().add("nmdien61@gmail.com");
         owner.getEmails().add("nguyenminhdien1506@gmail.com");
+        
+        owner.getPhones().put("Mobile", "01959677xxx");
+        owner.getPhones().put("Home", "0838xxxxxx");
+        
+        owner.getWebsites().put(SocialNetwork.Facebook, "https://www.facebook.com/nmdien1988");
+        owner.getWebsites().put(SocialNetwork.Linkedin, "https://vn.linkedin.com/in/diennm");
+        
         owner.getVacations().add(vacation1);
         owner.getVacations().add(vacation2);
         
