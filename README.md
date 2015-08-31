@@ -13,4 +13,7 @@ These samples are using Hibernate vendor that implements JPA Specification
       
     - jpa-sample-03:
       + Examples of association mappings: one2one, one2many, many2one, many2many, and collection mapping
+      
+     - jpa-sample-04:
+      + Advance mapping: compound key, shared key, many2many with extra states, etc
     
