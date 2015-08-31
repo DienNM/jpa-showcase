@@ -13,6 +13,17 @@
         <class>com.dee.jpa.hibernate.derivedidentifier.sharedprimary.Employee</class>
         <class>com.dee.jpa.hibernate.derivedidentifier.sharedprimary.EmployeeHistory</class>
         
+        
+        <class>com.dee.jpa.hibernate.relationship.TravelHistory</class>
+        <class>com.dee.jpa.hibernate.relationship.Traveller</class>
+        <class>com.dee.jpa.hibernate.relationship.TravellerGroup</class>
+        
+        
+        <class>com.dee.jpa.hibernate.relationship.extrastate.Order</class>
+        <class>com.dee.jpa.hibernate.relationship.extrastate.OrderEntry</class>
+        <class>com.dee.jpa.hibernate.relationship.extrastate.Product</class>
+        
+        
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
