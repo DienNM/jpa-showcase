@@ -8,6 +8,12 @@
         <class>com.dee.jpa.hibernate.compoundprimary.idclass.People1</class>
         <class>com.dee.jpa.hibernate.compoundprimary.embedded.People2</class>
 
+
+        
+        <class>com.dee.jpa.hibernate.derivedidentifier.sharedprimary.Employee</class>
+        <class>com.dee.jpa.hibernate.derivedidentifier.sharedprimary.EmployeeHistory</class>
+        
+
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
             <property name="javax.persistence.jdbc.user" value="dee" />
