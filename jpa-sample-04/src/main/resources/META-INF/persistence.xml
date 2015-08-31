@@ -24,6 +24,18 @@
         <class>com.dee.jpa.hibernate.relationship.extrastate.Product</class>
         
         
+        <class>com.dee.jpa.hibernate.inheritence.singletable.User1</class>
+        <class>com.dee.jpa.hibernate.inheritence.singletable.Employee1</class>
+        <class>com.dee.jpa.hibernate.inheritence.singletable.Customer1</class>
+        
+        
+        <class>com.dee.jpa.hibernate.inheritence.jointable.User2</class>
+        <class>com.dee.jpa.hibernate.inheritence.jointable.Employee2</class>
+        <class>com.dee.jpa.hibernate.inheritence.jointable.Customer2</class>
+        
+        <class>com.dee.jpa.hibernate.inheritence.perconcreteclass.User3</class>
+        <class>com.dee.jpa.hibernate.inheritence.perconcreteclass.Employee3</class>
+        <class>com.dee.jpa.hibernate.inheritence.perconcreteclass.Customer3</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
