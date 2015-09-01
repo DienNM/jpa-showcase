@@ -1,5 +1,6 @@
 package com.dee.jpa.hibernate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -20,17 +21,18 @@ public class EmployeeServiceTest extends TestCase {
     
     private EmployeeService employeeService;
     
+    private List<Employee> employees = new ArrayList<Employee>();
+    private EntityManager em = EntityManagerUtil.getEntityManager();
+    
     @Override
     protected void setUp() throws Exception {
-        EntityManager em = EntityManagerUtil.getEntityManager();
+        
         employeeService = new EmployeeServiceImpl(em);
         initData();
     }
     
     @Override
     protected void tearDown() throws Exception {
-        
-        EntityManager em = EntityManagerUtil.getEntityManager();
         em.getTransaction().begin();
         
         em.createQuery("DELETE FROM Employee").executeUpdate();
@@ -79,7 +81,11 @@ public class EmployeeServiceTest extends TestCase {
         em.persist(employee1);
         em.persist(employee2);
         em.persist(employee3);
-
+        
+        employees.add(employee1);
+        employees.add(employee2);
+        employees.add(employee3);
+        
         em.getTransaction().commit();
         em.close();
     }
@@ -126,6 +132,42 @@ public class EmployeeServiceTest extends TestCase {
         employee = employeeService.getByPhoneNumber("0829xxxxxx");
         assertNotNull(employee);
         assertEquals("email2@gmail.com", employee.getEmail());
+        
+    }
+    
+    public void testGetPhones() {
+        
+        List<Phone> phones = employeeService.getPhones(employees.get(0).getId());
+        assertEquals(4, phones.size());
+        assertEquals("0988xxxxxx", phones.get(0).getNum());
+        
+    }
+    
+    public void testGetAddress() {
+        
+        Address address = employeeService.getAddress(employees.get(0).getId());
+        assertNotNull(address);
+        
+    }
+    
+    public void testGetEmployeeEmail() {
+        
+        String email = employeeService.getEmployeeEmail(employees.get(0).getId());
+        assertEquals("email1@gmail.com", email);
+        
+    }
+    
+    public void testGetPhoneNums() {
+        
+        List<String> phoneNums = employeeService.getPhoneNumbers(employees.get(0).getId());
+        assertEquals(4, phoneNums.size());
+        
+    }
+    
+    public void testGetEmailAndPhoneNums() {
+        
+        List<String> emailAndPhone = employeeService.getEmailAndPhoneNumbers(employees.get(0).getId());
+        assertEquals(4, emailAndPhone.size());
         
     }
 }

@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 /**
@@ -34,6 +35,7 @@ public class Employee implements Serializable {
     private Department dept;
     
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @OrderBy(value = "num")
     private List<Phone> phones = new ArrayList<Phone>();
     
     @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
