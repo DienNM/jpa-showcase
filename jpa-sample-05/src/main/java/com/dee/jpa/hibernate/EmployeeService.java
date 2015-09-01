@@ -34,4 +34,6 @@ public interface EmployeeService {
     
     List<String[]> getEmailsAndAddresses();
     
+    List<EmailAndAddress> getEmailAndAddress1();
+    
 }

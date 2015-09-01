@@ -203,4 +203,20 @@ public class EmployeeServiceTest extends TestCase {
             }
         }
     }
+    
+    public void testGetEmailAndAddress1() {
+        List<EmailAndAddress> emailsAndAddresses = employeeService.getEmailAndAddress1();
+        assertEquals(3, emailsAndAddresses.size());
+        for(EmailAndAddress emailAndAddress : emailsAndAddresses) {
+            if(emailAndAddress.getEmail().equals("email1@gmail.com")) {
+                assertEquals("Ca Mau", emailAndAddress.getAddress());
+            } else if(emailAndAddress.getEmail().equals("email2@gmail.com")) {
+                assertEquals("Ho Chi Minh", emailAndAddress.getAddress());
+            } else if(emailAndAddress.getEmail().equals("email3@gmail.com")) {
+                assertEquals("Da Lat", emailAndAddress.getAddress());
+            } else {
+                fail();
+            }
+        }
+    }
 }

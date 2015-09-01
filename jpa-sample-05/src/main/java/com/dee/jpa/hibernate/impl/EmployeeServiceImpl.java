@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
+import com.dee.jpa.hibernate.EmailAndAddress;
 import com.dee.jpa.hibernate.EmployeeService;
 import com.dee.jpa.hibernate.PhoneAggregate;
 import com.dee.jpa.hibernate.model.Address;
@@ -157,5 +158,14 @@ public class EmployeeServiceImpl implements EmployeeService {
             emailsAndAddresses.add(subResult);
         }
         return emailsAndAddresses;
+    }
+
+    @Override
+    public List<EmailAndAddress> getEmailAndAddress1() {
+
+        TypedQuery<EmailAndAddress> query = em.createQuery("SELECT NEW com.dee.jpa.hibernate.EmailAndAddress(e.email, e.address.address) "
+                + "FROM Employee e JOIN e.address a", 
+                EmailAndAddress.class);
+        return query.getResultList();
     }
 }
