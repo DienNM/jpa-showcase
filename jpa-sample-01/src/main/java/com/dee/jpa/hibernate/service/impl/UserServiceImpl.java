@@ -1,4 +1,4 @@
-package com.dee.jpa.hibernate;
+package com.dee.jpa.hibernate.service.impl;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import com.dee.jpa.hibernate.model.UserModel;
+import com.dee.jpa.hibernate.service.UserService;
 
 /**
  * @author dien.nguyen

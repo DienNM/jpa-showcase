@@ -1,4 +1,4 @@
-package com.dee.jpa.hibernate;
+package com.dee.jpa.hibernate.service;
 
 import java.util.List;
 

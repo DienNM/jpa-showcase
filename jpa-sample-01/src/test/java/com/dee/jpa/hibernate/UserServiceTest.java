@@ -7,6 +7,8 @@ import javax.persistence.EntityManager;
 import org.junit.Assert;
 
 import com.dee.jpa.hibernate.model.UserModel;
+import com.dee.jpa.hibernate.service.UserService;
+import com.dee.jpa.hibernate.service.impl.UserServiceImpl;
 
 import junit.framework.TestCase;
 
