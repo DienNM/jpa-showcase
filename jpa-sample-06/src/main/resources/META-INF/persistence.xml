@@ -1,0 +1,45 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
+                       http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+            version="2.0">
+    <persistence-unit name="pu-dee-jpa" transaction-type="RESOURCE_LOCAL">
+
+        <class>com.dee.jpa.hibernate.model.Employee</class>
+
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.user" value="dee" />
+            <property name="javax.persistence.jdbc.password" value="dee123" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/dee-jpa-hibernate" />
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+            <property name="hibernate.hbm2ddl.auto" value="create" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.generate_statistics" value="true" />
+            
+            
+            <!-- Connection Pool C3P0 -->
+            
+            <property name="hibernate.connection.provider_class" 
+                    value="org.hibernate.c3p0.internal.C3P0ConnectionProvider" />
+            <property name="hibernate.c3p0.timeout" value="300" />
+            <property name="hibernate.c3p0.min_size" value="3" />
+            <property name="hibernate.c3p0.max_size" value="5" />
+            <property name="hibernate.c3p0.max_statements" value="50" />
+            <property name="hibernate.c3p0.idle_test_period" value="3000" />
+            <property name="hibernate.generate_statistics" value= "true" />
+            
+            <!-- Connection Pool DBCP -->
+            <!-- <property name="hibernate.dbcp.initialSize" value="3" />
+            <property name="hibernate.dbcp.maxActive" value="5" />
+            <property name="hibernate.dbcp.maxIdle" value="3" />
+            <property name="hibernate.dbcp.minIdle" value="3" />
+            <property name="hibernate.dbcp.maxWait" value="-1" />
+            <property name="hibernate.dbcp.testOnReturn" value= "true111" />
+            <property name="hibernate.dbcp.validationQuery" value= "SELECT 1" /> -->
+        </properties>
+
+    </persistence-unit>
+
+</persistence>
