@@ -170,4 +170,37 @@ public class EmployeeServiceTest extends TestCase {
         assertEquals(4, emailAndPhone.size());
         
     }
+    
+    public void testGetAllEmailsAndPhones() {
+        
+        List<PhoneAggregate> phoneAggregates = employeeService.getAllEmailsAndPhones();
+        assertEquals(3, phoneAggregates.size());
+        for(PhoneAggregate p : phoneAggregates) {
+            if(p.getEmail().equals("email1@gmail.com")) {
+                assertEquals(4, p.getTotalPhones());
+            } else if(p.getEmail().equals("email2@gmail.com")) {
+                assertEquals(3, p.getTotalPhones());
+            } else if(p.getEmail().equals("email3@gmail.com")) {
+                assertEquals(2, p.getTotalPhones());
+            } else {
+                fail();
+            }
+        }
+    }
+    
+    public void testNamedQuery() {
+        List<String[]> emailsAndAddresses = employeeService.getEmailsAndAddresses();
+        assertEquals(3, emailsAndAddresses.size());
+        for(String[] emailAndAddress : emailsAndAddresses) {
+            if(emailAndAddress[0].equals("email1@gmail.com")) {
+                assertEquals("Ca Mau", emailAndAddress[1]);
+            } else if(emailAndAddress[0].equals("email2@gmail.com")) {
+                assertEquals("Ho Chi Minh", emailAndAddress[1]);
+            } else if(emailAndAddress[0].equals("email3@gmail.com")) {
+                assertEquals("Da Lat", emailAndAddress[1]);
+            } else {
+                fail();
+            }
+        }
+    }
 }

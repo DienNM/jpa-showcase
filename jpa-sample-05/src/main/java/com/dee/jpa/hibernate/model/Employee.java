@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.OrderBy;
@@ -21,6 +23,12 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "employee")
+
+@NamedQueries(value = {
+        @NamedQuery(name = "getEmailsAndAddresses", 
+                query = "SELECT e.email, a.address FROM Employee e JOIN e.address a")
+})
+
 public class Employee implements Serializable {
 
     private static final long serialVersionUID = 1L;

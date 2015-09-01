@@ -8,6 +8,7 @@ import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import com.dee.jpa.hibernate.EmployeeService;
+import com.dee.jpa.hibernate.PhoneAggregate;
 import com.dee.jpa.hibernate.model.Address;
 import com.dee.jpa.hibernate.model.Employee;
 import com.dee.jpa.hibernate.model.Phone;
@@ -92,11 +93,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         return (String) query.getSingleResult();
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     public List<String> getPhoneNumbers(Long employeeId) {
         
-        Query query = em.createQuery("SELECT p.num FROM Employee e JOIN e.phones p WHERE e.id = :employeeId");
+        TypedQuery<Object> query = em.createQuery("SELECT p.num FROM Employee e JOIN e.phones p "
+                + "WHERE e.id = :employeeId", Object.class);
         query.setParameter("employeeId", employeeId);
         
         List<Object> objectArrays = query.getResultList();
@@ -109,10 +110,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
     
     
-    @SuppressWarnings("unchecked")
     @Override
     public List<String> getEmailAndPhoneNumbers(Long employeeId) {
-        Query query = em.createQuery("SELECT e.email, p.num FROM Employee e JOIN e.phones p WHERE e.id = :employeeId");
+        TypedQuery<Object[]> query = em.createQuery("SELECT e.email, p.num "
+                + "FROM Employee e JOIN e.phones p WHERE e.id = :employeeId", Object[].class);
         query.setParameter("employeeId", employeeId);
         
         List<Object[]> objectArrays = query.getResultList();
@@ -122,5 +123,39 @@ public class EmployeeServiceImpl implements EmployeeService {
             emailAndPhones.add("Email=" + obj[0].toString() + " - Phone=" + obj[1].toString());
         }
         return emailAndPhones;
+    }
+
+    @Override
+    public List<PhoneAggregate> getAllEmailsAndPhones() {
+
+        TypedQuery<Object[]> query = em.createQuery("SELECT e.email, count(p.num) "
+                + "FROM Employee e JOIN e.phones p GROUP BY e.email", Object[].class);
+        List<Object[]> objects = query.getResultList();
+        
+        List<PhoneAggregate> phoneAggregates = new ArrayList<PhoneAggregate>();
+        for(Object[] obj : objects) {
+            PhoneAggregate p = new PhoneAggregate();
+            p.setEmail(obj[0].toString());
+            p.setTotalPhones(Integer.valueOf(obj[1].toString()));
+            phoneAggregates.add(p);
+        }
+        
+        return phoneAggregates;
+    }
+
+    @Override
+    public List<String[]> getEmailsAndAddresses() {
+        
+        TypedQuery<Object[]> query = em.createNamedQuery("getEmailsAndAddresses", Object[].class);
+        List<Object[]> objects = query.getResultList();
+        
+        List<String[]> emailsAndAddresses = new ArrayList<String[]>();
+        for(Object[] obj : objects) {
+            String[] subResult = new String[2];
+            subResult[0] = obj[0].toString();
+            subResult[1] = obj[1].toString();
+            emailsAndAddresses.add(subResult);
+        }
+        return emailsAndAddresses;
     }
 }

@@ -30,4 +30,8 @@ public interface EmployeeService {
     
     List<String> getEmailAndPhoneNumbers(Long employeeId);
     
+    List<PhoneAggregate> getAllEmailsAndPhones();
+    
+    List<String[]> getEmailsAndAddresses();
+    
 }
