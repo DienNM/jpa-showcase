@@ -1,7 +1,0 @@
-com\dee\jpa\hibernate\model\Employee.class
-com\dee\jpa\hibernate\model\Department.class
-com\dee\jpa\hibernate\model\Phone.class
-com\dee\jpa\hibernate\EmployeeService.class
-com\dee\jpa\hibernate\model\Address.class
-com\dee\jpa\hibernate\impl\EmployeeServiceImpl.class
-com\dee\jpa\hibernate\EntityManagerUtil.class

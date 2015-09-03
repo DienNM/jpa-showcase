@@ -1,7 +1,0 @@
-com\dee\jpa\hibernate\many2one\Many2OneTest.class
-com\dee\jpa\hibernate\collection\OrderedCollectionTest.class
-com\dee\jpa\hibernate\one2many\One2ManyTest.class
-com\dee\jpa\hibernate\collection\MapCollectionTest.class
-com\dee\jpa\hibernate\many2many\Many2ManyTest.class
-com\dee\jpa\hibernate\collection\CollectionMappingTest.class
-com\dee\jpa\hibernate\one2one\One2OneTest.class
